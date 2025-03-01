@@ -30,6 +30,16 @@ SECRET_KEY = "django-insecure-lf*#ea*&n(+bi^e7##2_7(h^smwbt8rh)3_g8#@h1qfi24lmtm
 DEBUG = True
 
 ALLOWED_HOSTS = ['ems-21j1.onrender.com', 'localhost', '127.0.0.1']
+# 处理静态文件
+STATIC_URL = '/static/'
+
+# 生产环境部署时，收集静态文件的路径
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# 额外的静态文件目录（如果你的项目有前端静态文件）
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 
 
@@ -53,6 +63,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

@@ -27,3 +27,4 @@ wcwidth==0.2.13
 django-cors-headers
 dj-database-url
 gunicorn
+whitenoise
