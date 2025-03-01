@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-lf*#ea*&n(+bi^e7##2_7(h^smwbt8rh)3_g8#@h1qfi24lmtm"
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,6 +72,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'EmployeeProductManagementDjangoReact.middleware.RoleMiddleware',
 ]
+
+WSGI_APPLICATION = "EmployeeProductManagementDjangoReact.wsgi.application"
 
 ROOT_URLCONF = 'EmployeeProductManagementDjangoReact.urls'
 
@@ -158,7 +160,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # 生产环境
+
 
 # Media files (User uploaded files)
 MEDIA_URL = '/avatars/'
@@ -169,9 +173,11 @@ MEDIA_ROOT = BASE_DIR / 'avatars'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
+CORS_ALLOWED_ORIGINS = [
+    "https://your-react-app.onrender.com",  # 🚀 允许 Render 的 React
+    "http://localhost:3000",  # 开发环境
 ]
+
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -186,6 +192,7 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
 
 # REST Framework设置
 REST_FRAMEWORK = {
