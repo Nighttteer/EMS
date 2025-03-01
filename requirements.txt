@@ -26,3 +26,4 @@ vine==5.1.0
 wcwidth==0.2.13
 django-cors-headers
 dj-database-url
+gunicorn
