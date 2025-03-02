@@ -7,7 +7,7 @@ import EmployeeProfile from './components/Employee/EmployeeProfile.jsx';
 import ProjectList from './components/Project/ProjectList.jsx';
 import NotificationList from './components/Notification/NotificationList.jsx';
 import EmployerList from './components/Employer/employerlist';
-import EmployerProfile from './components/Employer/EmployerProfile';
+import EmployerProfile from './components/Employer/Employerprofile';
 import Profile from './components/Profile/Profile.jsx';
 import { ConfigProvider } from 'antd';
 
