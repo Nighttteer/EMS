@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Table, Button, Space, Modal, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../utils/axios';
-import EmployerForm from './EmployerForm';
+import EmployerForm from './employeform';
 
 const EmployerList = () => {
   const navigate = useNavigate();
