@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import Login from './components/Auth/Login.jsx';
 import Dashboard from './layouts/Dashboard.jsx';
-import EmployeeList from './components/Employee/employeelist.jsx';
+import EmployeeList from './components/Employee/EmployeeList.jsx';
 import EmployeeProfile from './components/Employee/EmployeeProfile.jsx';
 import ProjectList from './components/Project/ProjectList.jsx';
 import NotificationList from './components/Notification/NotificationList.jsx';
-import EmployerList from './components/Employer/employerlist';
-import EmployerProfile from './components/Employer/Employerprofile';
+import EmployerList from './components/Employer/EmployerList.jsx';
+import EmployerProfile from './components/Employer/EmployerProfile.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import { ConfigProvider } from 'antd';
 
